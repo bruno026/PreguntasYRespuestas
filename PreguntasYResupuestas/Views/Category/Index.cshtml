@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Crear Categoria";
+
+}
+
+@model Core.Models.Category
+
+
+
+
+<form action="@Url.Action("Create", "Category")" method="POST">
+
+    <div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryName, "Nombre de la categoria", htmlAttributes: new { @class = "control-label " })
+            <div class="col-md-10">
+                <input type="text" required id="categoryName" name="categoryName" class="form-control" />
+                @Html.ValidationMessageFor(model => model.CategoryName, "Nombre de categoria requerido", new { @class = "text-danger" })
+            </div>
+
+            @Html.LabelFor(model => model.Dificulty, "Nivel de dificultad", htmlAttributes: new { @class = "control-label " })
+        <div class="col-md-10">
+            @Html.RadioButtonFor(model => model.Dificulty, Core.Enums.DificultyLevelEnum.Easy)  Facil
+            @Html.RadioButtonFor(model => model.Dificulty, Core.Enums.DificultyLevelEnum.Normal) Normal
+            @Html.RadioButtonFor(model => model.Dificulty, Core.Enums.DificultyLevelEnum.Hard) Dificil
+            @Html.RadioButtonFor(model => model.Dificulty, Core.Enums.DificultyLevelEnum.Harder) Muy dificil
+            @Html.RadioButtonFor(model => model.Dificulty, Core.Enums.DificultyLevelEnum.Extreme) Extremadamente dificil
+        </div>
+
+
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+@section navHome {
+
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Inicio del juego</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HowToPlay">Como Jugar</a>
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index"> Crear preguntas    </a>
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+}

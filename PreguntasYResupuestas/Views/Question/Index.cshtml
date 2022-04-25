@@ -1,0 +1,44 @@
+﻿@model Core.Models.Question;
+
+@{
+    ViewData["Title"] = "Crear preguntas";
+
+}
+@section navHome {
+
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Inicio del juego</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HowToPlay">Como Jugar</a>
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index"> Crear categorias    </a>
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
